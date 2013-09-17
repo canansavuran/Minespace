@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Minespace.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape"  Orientation="Landscape"
+    shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.feature.settings.rest.png" Text="Options" Click="ApplicationBarIconButton_Click_1"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.transport.play.rest.png" Text="Continue" Click="ApplicationBarIconButton_Click_4"/>
+
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.check.rest.png" Text="New Game" Click="ApplicationBarIconButton_Click_3"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.add.rest.png" Text="New User" Click="ApplicationBarIconButton_Click_2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Create or Select" Click="ApplicationBarIconButton_Click_5"/>
+                <shell:ApplicationBarMenuItem Text="Statistics" Click="ApplicationBarIconButton_Click_6"/>
+                <shell:ApplicationBarMenuItem Text="Change View" Click="ApplicationBarMenuItem_Click_1"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Assets/Background.png"/>
+        </Grid.Background>
+        <!--Pivot Control-->
+        <controls:Pivot Title="Minespace">
+            <controls:Pivot.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#3F000000" Offset="0.268"/>
+                    <GradientStop  x:Name="asd"     Color="Brown" Offset="0.017"/>
+                </LinearGradientBrush>
+            </controls:Pivot.Background>
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Home" Margin="10,0,14,10">
+                <Grid>
+                    <TextBlock x:Name="welcome" HorizontalAlignment="Left" Height="337" TextWrapping="Wrap" VerticalAlignment="Top" Width="632"/>
+                    <Button x:Name="newGame" Content="Random New Game" HorizontalAlignment="Left" Margin="102,39,0,0" VerticalAlignment="Top" Width="388" Click="newGame_Click"/>
+                    <Button x:Name="continueGame" Content="Continue Game" HorizontalAlignment="Left" Margin="102,111,0,0" VerticalAlignment="Top" Click="continueGame_Click" Width="388"/>
+                    <Button x:Name="createGame" Content="Create Game or Select Game" HorizontalAlignment="Left" Margin="102,183,0,0" VerticalAlignment="Top" Width="388" Click="createGame_Click"/>
+                    <!--Double line list with text wrapping-->
+               
+
+              </Grid>
+            </controls:PivotItem>
+ 
+            <!--Pivot item two-->
+            <controls:PivotItem Header="Help"> 
+                <!--Triple line list no text wrapping-->
+                  
+            </controls:PivotItem>
+        </controls:Pivot>
+        
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Minespace.OyunDevam"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.cancel.rest.png" Text="Save Game" Click="ApplicationBarIconButton_Click_2"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#3F000000" Offset="0.268"/>
+                <GradientStop  x:Name="arka"     Color="Brown" Offset="0.017"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="113.433"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="342*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <Button x:Name="BTNFlag" Content="Flag" Margin="0,10,529,35.433" FontSize="22" FontWeight="Bold" Click="BTNFlag_Click"/>
+        <Button x:Name="BTNQues" Content="Question Mark" Margin="127,10,326,35.433" FontSize="22" FontWeight="Bold" Click="BTNQues_Click"/>
+        <ListBox x:Name="Buttonlar" Margin="0,110,2,10" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.RowSpan="4">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" >
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+        <Button x:Name="buttonZaman" Content="...Süremiz..." HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top" IsEnabled="False" Height="72" Width="171"/>
+        <TextBlock x:Name="minecount" HorizontalAlignment="Left" Margin="506,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+
+
+        <!--ContentPanel - place additional content here-->
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
